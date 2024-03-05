@@ -49,6 +49,7 @@ Aluno: Marcos Vinícius Bandeira Irigoyen
 | N    | N | N |
 | C    | C | C |
 - ### 4) Cadeias contendo a subcadeia 010;
+#### Diagrama  
 ![Diagrama](q1_4.svg)  
 |  | |Descrição formal |
 | ---      |---| --- |
@@ -65,6 +66,7 @@ Aluno: Marcos Vinícius Bandeira Irigoyen
 | 2c   | 3c | I |
 | 3c   | 3c | 3c |
 - ### 5) Cadeias que não contenham a subcadeia 010;
+#### Diagrama  
 *considere que os círculos simples são círculos duplos e vice-versa*  
 ![Diagrama](q1_4.svg)  
 |  | |Descrição formal |
@@ -82,6 +84,7 @@ Aluno: Marcos Vinícius Bandeira Irigoyen
 | 2c   | 3c | I |
 | 3c   | 3c | 3c |
 - ### 6) Cadeias que começam e terminam com 0;
+#### Diagrama  
 ![Diagrama](q1_6.svg)  
 |  | |Descrição formal |
 | ---      |---| --- |
@@ -98,6 +101,7 @@ Aluno: Marcos Vinícius Bandeira Irigoyen
 | A    | A | P |
 | P    | A | P |
 - ### 7) Cadeias contendo um número par de 0s e um número ímpar de 1s;
+#### Diagrama  
 ![Diagrama](q1_7.svg)  
 |  | |Descrição formal |
 | ---      |---| --- |
@@ -114,6 +118,7 @@ Aluno: Marcos Vinícius Bandeira Irigoyen
 | 0I1I    | 0P1I | 0I1P |
 | 0I1P    | 0P1P | 0I1I |
 - ### 8) $\sum^*$
+#### Diagrama  
 ![Diagrama](q1_8.svg)  
 |  | |Descrição formal |
 | ---      |---| --- |
@@ -123,6 +128,7 @@ Aluno: Marcos Vinícius Bandeira Irigoyen
 | $q_1$    |=  | $\text{K}$ |
 | $F$      |=  | $\{\text{K}\}$ |
 - ### 9) $\phi$
+#### Diagrama  
 ![Diagrama](q1_9.svg)  
 |  | |Descrição formal |
 | ---      |---| --- |
@@ -139,31 +145,31 @@ Uma mesma transição para N símbolos é tratada como N arestas entre o par de 
 Contando da esquerda pra direita, de cima para baixo:
 
 ### AFD 1:  
-$\^\delta(q_1, 1) = q_2$ (caminho $q_1 \rightarrow q_2$)  
-$\^\delta(q_1, 0) = q_1$ (ciclo $q_1 \rightarrow q_1$)  
-$\^\delta(q_2, 1) = q_2$ (ciclo $q_2 \rightarrow q_2$)  
-$\^\delta(q_1, (0^i)1\omega) = \^\delta(q_2, \omega)$  
+$\hat{\delta}(q_1, 1) = q_2$ (caminho $q_1 \rightarrow q_2$)  
+$\hat{\delta}(q_1, 0) = q_1$ (ciclo $q_1 \rightarrow q_1$)  
+$\hat{\delta}(q_2, 1) = q_2$ (ciclo $q_2 \rightarrow q_2$)  
+$\hat{\delta}(q_1, (0^i)1\omega) = \hat{\delta}(q_2, \omega)$  
 
-$\^\delta(q_2, 00) = q_2$ (ciclo $q_2 \rightarrow q_3 \rightarrow q_2$)  
-$\^\delta(q_2, 01) = q_2$ (ciclo $q_2 \rightarrow q_3 \rightarrow q_2$)  
+$\hat{\delta}(q_2, 00) = q_2$ (ciclo $q_2 \rightarrow q_3 \rightarrow q_2$)  
+$\hat{\delta}(q_2, 01) = q_2$ (ciclo $q_2 \rightarrow q_3 \rightarrow q_2$)  
 
 Linguagem: $L = \{(0^i)1\omega \mid \omega \in \{1,\ 00,\ 01\}^* , i \ge 0\}$  
 
 ### AFD 2:
-$\^\delta(q_1, 1) = q_2$ (caminho $q_1 \rightarrow q_2$)  
-$\^\delta(q_1, 0) = q_1$ (ciclo $q_1 \rightarrow q_1$)  
-$\^\delta(q_2, 1) = q_2$ (ciclo $q_2 \rightarrow q_2$)  
-$\^\delta(q_2, 01) = q_2$ (ciclo $q_2 \rightarrow q_1 \rightarrow q_2$)  
+$\hat{\delta}(q_1, 1) = q_2$ (caminho $q_1 \rightarrow q_2$)  
+$\hat{\delta}(q_1, 0) = q_1$ (ciclo $q_1 \rightarrow q_1$)  
+$\hat{\delta}(q_2, 1) = q_2$ (ciclo $q_2 \rightarrow q_2$)  
+$\hat{\delta}(q_2, 01) = q_2$ (ciclo $q_2 \rightarrow q_1 \rightarrow q_2$)  
 Linguagem: $L = \{ (0^i)1\omega \mid \omega \in \{1,\ 0(0^j)1\}^* \}$  
 ou, diretamente: $L = \{ \omega1 |\omega \in \sum^* \}$
 
 ### AFD 3:
-$\^\delta(q_1, a) = q_2$ (caminho $q_1 \rightarrow q_2$)  
-$\^\delta(q_1, b) = q_1$ (ciclo $q_1 \rightarrow q_1$)  
-$\^\delta(q_1, aab) = q_1$ (ciclo $q_1 \rightarrow q_2 \rightarrow q_3 \rightarrow q_1$)  
-$\^\delta(q_1, abb) = q_1$ (ciclo $q_1 \rightarrow q_2 \rightarrow q_3 \rightarrow q_1$)  
-$\^\delta(q_2, aa) = q_2$ (ciclo $q_2 \rightarrow q_3 \rightarrow q_2$)  
-$\^\delta(q_2, ba) = q_2$ (ciclo $q_2 \rightarrow q_3 \rightarrow q_2$)  
+$\hat{\delta}(q_1, a) = q_2$ (caminho $q_1 \rightarrow q_2$)  
+$\hat{\delta}(q_1, b) = q_1$ (ciclo $q_1 \rightarrow q_1$)  
+$\hat{\delta}(q_1, aab) = q_1$ (ciclo $q_1 \rightarrow q_2 \rightarrow q_3 \rightarrow q_1$)  
+$\hat{\delta}(q_1, abb) = q_1$ (ciclo $q_1 \rightarrow q_2 \rightarrow q_3 \rightarrow q_1$)  
+$\hat{\delta}(q_2, aa) = q_2$ (ciclo $q_2 \rightarrow q_3 \rightarrow q_2$)  
+$\hat{\delta}(q_2, ba) = q_2$ (ciclo $q_2 \rightarrow q_3 \rightarrow q_2$)  
 
 Linguagem: $L = \{ \omega a \alpha \mid \omega \in \{b,\ a\beta ab, a\beta bb\}^*,\ \beta \in \{aa,\ ba\}^*, \alpha \in \{aa,\ ba, ab(b^i)a, bb(b^j)a\}^*,\ i,j\ge0 \} $  
 simplificando $\omega$ (qualquer cadeia que use $a\beta ab$ ou $a\beta ab$ já iria pra $q_2$):  
@@ -173,16 +179,16 @@ Linguagem: $L = \{ (b^i)a\alpha \mid \alpha \in \{aa,\ ba,\ ab(b^i)a,\ bb(b^j)a 
 ### AFD 4:
 Tratando a linguagem de um afd com múltiplos estados finais como a união das linguagens dos afds com um único dos estados finais
 
-$\^\delta(q_1, a) = q_1$ (ciclo $q_1 \rightarrow q_1$)  
-$\^\delta(q_1, bbab) = q_1$ (ciclo $q_1 \rightarrow q_2 \rightarrow q_4 \rightarrow q_3 \rightarrow q_1$)  
-$\^\delta(q_1, bab) = q_1$ (ciclo $q_1 \rightarrow q_2 \rightarrow q_3 \rightarrow q_1$)  
-$\^\delta(q_2, aa) = q_2$ (ciclo $q_2 \rightarrow q_3 \rightarrow q_2$)  
-$\^\delta(q_2, baa) = q_2$ (ciclo $q_2 \rightarrow q_4 \rightarrow q_3 \rightarrow q_2$)  
-$\^\delta(q_4, b) = q_4$ (ciclo $q_4 \rightarrow q_4$)  
+$\hat{\delta}(q_1, a) = q_1$ (ciclo $q_1 \rightarrow q_1$)  
+$\hat{\delta}(q_1, bbab) = q_1$ (ciclo $q_1 \rightarrow q_2 \rightarrow q_4 \rightarrow q_3 \rightarrow q_1$)  
+$\hat{\delta}(q_1, bab) = q_1$ (ciclo $q_1 \rightarrow q_2 \rightarrow q_3 \rightarrow q_1$)  
+$\hat{\delta}(q_2, aa) = q_2$ (ciclo $q_2 \rightarrow q_3 \rightarrow q_2$)  
+$\hat{\delta}(q_2, baa) = q_2$ (ciclo $q_2 \rightarrow q_4 \rightarrow q_3 \rightarrow q_2$)  
+$\hat{\delta}(q_4, b) = q_4$ (ciclo $q_4 \rightarrow q_4$)  
 
 Sub-linguagem: $L_1 = \{\omega \mid \omega \in \{a,\ b(aa)^ibb^ja\alpha b, ba\alpha b\}^*,\ \alpha \in \{aa, abb^ka\}^*,\ i,j,k\ge0\}$ (tentando simplificar com a OBS da afd3)
 
-$\^\delta(q_1, bb) = q_4$ (caminho $q_1 \rightarrow q_2 \rightarrow q_4 $)  
+$\hat{\delta}(q_1, bb) = q_4$ (caminho $q_1 \rightarrow q_2 \rightarrow q_4 $)  
 
 Sub-linguagem: $L_2 = \{a^ib\omega b\alpha \mid \omega \in \{aa,\ aba^jb\}^*,\ \alpha \in \{b,\ a(aa)^kab,\ a(aa)^lba^mb \beta b\}^*,\ \beta \in \{aa, aba^nb\}^*,\ i,j,k,l,m,n\ge0 \}$
 
