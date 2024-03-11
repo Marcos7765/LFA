@@ -27,16 +27,84 @@ Considere * como qualquer caractere não-nulo (stem:[a \mid a \in \Sigma])
 
 .Diagrama da questão 2
 image::l2q1.svg[]
+
+.*Descrição formal*
+[cols=".^1s, ^.^3", caption=]
+|===
+|Q| stem:[\{ I,\ 0,\ 01,\ S \}]
+|stem:[\Sigma]| stem:[\{ 0, 1 \}]
+|stem:[\delta]| Tabela abaixo.
+|q~0~| I
+|F| stem:[\{S\}]
+|===
+
+.*Função de transição*
+[cols=".^1s, 3*^.^2", options=header, caption=]
+|===
+|Estado|0|1| stem:[\epsilon]
+|I| stem:[\{I,\ 0\}] | stem:[\{I\}]| stem:[\{I\}]
+|0| stem:[\{\}]| stem:[\{01\}]| stem:[\{0\}]
+|01| stem:[\{S\}]| stem:[\{S\}]| stem:[\{01,\ S \}]
+|S| stem:[\{S\}]| stem:[\{S\}]| stem:[\{S\}]
+|===
+
+OBS.: Esse estado S é inútil, bastava que o 01 fosse um estado de morte e já serviria. Pelo menos dá mais a cara de uma AFN
+
 '''
 [discrete]
 == Q.3_
-Por acaso esse também é um AFD.
 
 .Diagrama da questão 3
 image::l2q3.svg[]
+
+OBS.: Vírgula em nome de estado não é ideia
+
+.*Descrição formal*
+[cols=".^1s, ^.^3", caption=]
+|===
+|Q| stem:[\{ S,\ \text{"}C,P",\ \text{"}C,I" \}]
+|stem:[\Sigma]| stem:[\{ 0, 1 \}]
+|stem:[\delta]| Tabela abaixo.
+|q~0~| S
+|F| stem:[\{\text{"}C,P"\}]
+|===
+
+.*Função de transição*
+[cols=".^1s, 3*^.^2", options=header, caption=]
+|===
+|Estado|0|1| stem:[\epsilon]
+|S| stem:[\{S\}] | stem:[\{S, \text{"}C,P"\}]| stem:[\{S\}]
+|C,P| stem:[\{\text{"}C,I"\}]| stem:[\{\}]| stem:[\{\text{"}C,P"\}]
+|C,I| stem:[\{\text{"}C,P"\}]| stem:[\{\}]| stem:[\{\text{"}C,I"\}]
+|===
 '''
 [discrete]
 == Q.4_
 
 .Diagrama da questão 4
 image::l2q4.svg[]
+
+.*Descrição formal*
+[cols=".^1s, ^.^3", caption=]
+|===
+|Q| stem:[\{ I,\ 1a,\ 2a,\ 1b,\ 2b, 1c,\ 2c \}]
+|stem:[\Sigma]| stem:[\{ 0, 1 \}]
+|stem:[\delta]| Descrito abaixo.
+|q~0~| I
+|F| stem:[\{2a,\ 2b,\ 2c\}]
+|===
+
+Testando algo que faça mais sentido pruma AFN
+
+[stem]
+++++
+\begin{align*}
+\delta(I, a) &= \{I,\ 1a\} \\
+\delta(1a, a) &= \{2a\} \\
+\delta(I, b) &= \{I, 1b\} \\
+\delta(1b, b) &= \{2b\} \\
+\delta(I, c) &= \{I, 1c\} \\
+\delta(1c, c) &= \{2c\} \\
+\delta(q_x, y) &= \{\} \ \forall (q_x, y) \text{ que não apareceu aqui}
+\end{align*}
+++++
