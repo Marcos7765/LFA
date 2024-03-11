@@ -38,6 +38,8 @@ image::l2q1.svg[]
 |F| stem:[\{S\}]
 |===
 
+<<<
+
 .*Função de transição*
 [cols=".^1s, 3*^.^2", options=header, caption=]
 |===
@@ -78,6 +80,8 @@ OBS.: Vírgula em nome de estado não é ideia
 |C,I| stem:[\{\text{"}C,P"\}]| stem:[\{\}]| stem:[\{\text{"}C,I"\}]
 |===
 '''
+<<<
+
 [discrete]
 == Q.4_
 
