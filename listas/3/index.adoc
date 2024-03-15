@@ -1,0 +1,216 @@
+= Lista 3
+Aluno: Marcos Vinícius Bandeira Irigoyen
+:stem: latexmath
+:stylesheet: C:\Users\mvbir\Downloads\boot-slate.css
+
+Imagens e o markup pra lista no https://github.com/Marcos7765/LFA[repositório].
+
+[discrete]
+== Q.1_a)
+
+[cols=".^1s, 4*^.^2", options=header, caption=]
+|===
+|Estado|a|b| stem:[\epsilon] | E
+|q~1~| stem:[\{q_1,\ q_2\}] | stem:[\{\}]| stem:[\{\}] | stem:[\{q_1\}]
+|q~2~| stem:[\{\}]| stem:[\{q_1\}]| stem:[\{\}] | stem:[\{q_2\}]
+|===
+
+[stem]
+++++
+\begin{align*}
+E(q_1) &= \{q_1\} \\
+\delta(\{q_1\},a) &= E(\{q_1, q_2\}) &= \{q_1,q_2\} \\
+\delta(\{q_1\},b) &= E(\{q_2\}) &= \{q_2\} \\
+\delta(\{q_1,q_2\},a) &= E(\{q_1,q_2\}) &= \{q_1,q_2\} \\
+\delta(\{q_1,q_2\},b) &= E(\{q_1,q_2\}) &= \{q_1,q_2\} \\
+\delta(\{q_2\},a) &= E(\{\}) &= \{\} \\
+\delta(\{q_2\},b) &= E(\{q_1\}) &= \{q_1\} \\
+\end{align*}
+++++
+
+.*AFD*
+[cols=".^1s, ^.^3", caption=]
+|===
+|B| stem:[P(Q)]
+|stem:[\Sigma]| stem:[\{ a, b \}]
+|stem:[\delta]| Descrito acima.
+|q~0~| stem:[\{q_1\}]
+|F| stem:[\{\{q_1\},\ \{q_1,\ q_2\} \}]
+|===
+
+.Diagrama da questão
+image::l3q1a.svg[]
+'''
+<<<
+[discrete]
+== Q.1_b)
+
+A partir daqui eu parei de usar as chaves pros conjuntos no diagrama.
+
+[cols=".^1s, 4*^.^2", options=header, caption=]
+|===
+|Estado|a|b| stem:[\epsilon] | E
+|q~1~| stem:[\{q_3\}] | stem:[\{\}]| stem:[\{q_2\}] | stem:[\{q_1,q_2\}]
+|q~2~| stem:[\{q_1\}]| stem:[\{\}]| stem:[\{\}] | stem:[\{q_2\}]
+|q~3~| stem:[\{q_2\}]| stem:[\{q_2, q_3\}]| stem:[\{\}] | stem:[\{q_3\}]
+|===
+
+[stem]
+++++
+\begin{align*}
+E(q_1) &= \{q_1,q_2\} \\
+\delta(\{q_1,q_2\},a) &= E(\{q_1, q_3\}) &= \{q_1,q_2,q_3\} \\
+\delta(\{q_1,q_2\},b) &= E(\{\}) &= \{\} \\
+\delta(\{q_1,q_2,q_3\},a) &= E(\{q_1,q_2,q_3\}) &= \{q_1,q_2,q_3\} \\
+\delta(\{q_1,q_2,q_3\},b) &= E(\{q_2,q_3\}) &= \{q_2,q_3\} \\
+\delta(\{q_2,q_3\},a) &= E(\{q_1,q_2\}) &= \{q_1,q_2\} \\
+\delta(\{q_2,q_3\},b) &= E(\{q_2,q_3\}) &= \{q_2,q_3\} \\
+\end{align*}
+++++
+
+.*AFD*
+[cols=".^1s, ^.^3", caption=]
+|===
+|B| stem:[P(Q)]
+|stem:[\Sigma]| stem:[\{ a, b \}]
+|stem:[\delta]| Descrito acima.
+|q~0~| stem:[\{q_1,q_2\}]
+|F| stem:[\{\{q_1,\ q_2\}, \{q_1,q_2,q_3\}, \{q_2,q_3\} \}]
+|===
+
+.Diagrama da questão
+image::l3q1b.svg[]
+'''
+<<<
+
+[discrete]
+== Q.1_?)
+
+[cols=".^1s, 4*^.^2", options=header, caption=]
+|===
+|Estado|0|1| stem:[\epsilon] | E
+|q~1~| stem:[\{q_1\}] | stem:[\{q_1,q_2\}]| stem:[\{\}] | stem:[\{q_1\}]
+|q~2~| stem:[\{q_3\}]| stem:[\{\}]| stem:[\{q_3\}] | stem:[\{q_2,q_3\}]
+|q~3~| stem:[\{\}]| stem:[\{q_4\}]| stem:[\{\}] | stem:[\{q_3\}]
+|q~4~| stem:[\{q_4\}]| stem:[\{q_4\}]| stem:[\{\}] | stem:[\{q_4\}]
+|===
+
+[stem]
+++++
+\begin{align*}
+E(q_1) &= \{q_1\} \\
+\delta(\{q_1\},0) &= E(\{q_1\}) &= \{q_1\} \\
+\delta(\{q_1\},1) &= E(\{q_1,q_2\}) &= \{q_1,q_2,q_3\} \\
+
+\delta(\{q_1,q_2,q_3\},0) &= E(\{q_1,q_3\}) &= \{q_1,q_3\} \\
+\delta(\{q_1,q_2,q_3\},1) &= E(\{q_1,q_2,q_4\}) &= \{q_1,q_2,q_3,q_4\} \\
+
+\delta(\{q_1,q_3\},0) &= E(\{q_1\}) &= \{q_1\} \\
+\delta(\{q_1,q_3\},1) &= E(\{q_1,q_2,q_4\}) &= \{q_1,q_2,q_3,q_4\} \\
+
+\delta(\{q_1,q_2,q_3,q_4\},0) &= E(\{q_1,q_3,q_4\}) &= \{q_1,q_3,q_4\} \\
+\delta(\{q_1,q_2,q_3,q_4\},1) &= E(\{q_1,q_2,q_4\}) &= \{q_1,q_2,q_3,q_4\} \\
+
+\delta(\{q_1,q_3,q_4\},0) &= E(\{q_1,q_4\}) &= \{q_1,q_4\} \\
+\delta(\{q_1,q_3,q_4\},1) &= E(\{q_1,q_2,q_4\}) &= \{q_1,q_2,q_3,q_4\} \\
+
+\delta(\{q_1,q_4\},0) &= E(\{q_1,q_4\}) &= \{q_1,q_4\} \\
+\delta(\{q_1,q_4\},1) &= E(\{q_1,q_2,q_4\}) &= \{q_1,q_2,q_3,q_4\} \\
+\end{align*}
+++++
+
+.*AFD*
+[cols=".^1s, ^.^3", caption=]
+|===
+|B| stem:[P(Q)]
+|stem:[\Sigma]| stem:[\{ a, b \}]
+|stem:[\delta]| Descrito acima.
+|q~0~| stem:[\{q_1\}]
+|F| stem:[\{\{q_1,\ q_2,\ q_3,\ q_4\}, \{q_1,q_3,q_4\}, \{q_1,q_4\} \}]
+|===
+
+.Diagrama da questão
+image::l3q1c.svg[]
+'''
+
+[discrete]
+== Q.2_1)
+
+Somente os diagramas serão feitos pra Q.2.
+
+Os estados dos autômatos de a e b estão prefixados com a e b respectivamente.
+
+.Diagrama da questão
+image::l3q21.svg[]
+'''
+<<<
+
+[discrete]
+== Q.2_2)
+
+Para um novo alfabeto stem:[\Lambda = \{a,\ b,\ 0,\ 1\}] existiria a AFN abaixo (trate o * que veio da AFN da questão 1_a como "a, b"). Ela aceitaria palavras do tipo stem:[\omega \alpha \mid \omega \in \Lambda^* \wedge \alpha \in (L_a\cup L_c )], onde stem:[L_a] e stem:[L_c] são as linguagens do primeiro e do último autômato da questão 1. (vou pular a stem:[b \cup c] aliás)
+
+.Diagrama da questão
+image::l3q22.svg[]
+'''
+
+<<<
+
+[discrete]
+== Q.2_4)
+
+.Diagrama da questão
+image::l3q24.svg[]
+'''
+
+<<<
+
+[discrete]
+== Q.2_5)
+
+Esqueci de tirar o segundo círculo dos estados finais originais de b na montagem do diagrama, desconsidere-os.
+
+.Diagrama da questão
+image::l3q25.svg[]
+'''
+
+<<<
+
+[discrete]
+== Q.2_6)
+
+Aquele mesmo alfabeto do item 2, com palavras do tipo stem:[\omega \alpha \mid \omega \in L_a \wedge \alpha \in L_c] (praticamente a definição de concatenação, pulando a 7, 8, 9)
+
+.Diagrama da questão
+image::l3q26.svg[]
+'''
+
+<<<
+
+
+[discrete]
+== Q.2_10)
+
+(Pulando a 11 e 12)
+
+.Diagrama da questão
+image::l3q210.svg[]
+'''
+
+[discrete]
+== Q.2_13)
+
+.Diagrama da questão
+image::l3q213.svg[]
+'''
+
+<<<
+
+[discrete]
+== Q.2_13)
+
+O estado inicial criado pela união e o estado inicial criado pelo fechamento podem ser juntados. As curvas muito exdrúxulas provavelmente são de um estado final ao estado inicial.
+
+.Diagrama da questão
+image::l3q2132.svg[]
+'''
