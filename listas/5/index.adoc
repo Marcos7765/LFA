@@ -1,0 +1,40 @@
+= Lista 5
+Aluno: Marcos Vinícius Bandeira Irigoyen
+:stem: latexmath
+:stylesheet: C:\Users\mvbir\Downloads\boot-slate.css
+
+Imagens e o markup pra lista no https://github.com/Marcos7765/LFA[repositório].
+
+Aqui não tem quebra de página que ajude
+
+[discrete]
+== Q.1_?
+
+.Diagrama da questão
+image::l5q1.svg[]
+
+Expressão: stem:[(a^*bb^*(a\cup b)(a\cup \epsilon))^*a^*bb^*(a\cup b)]
+
+'''
+
+[discrete]
+== Q.1_a)
+
+.Diagrama da questão
+image::l5q1a.svg[]
+
+Expressão: stem:[((a\cup b)b)^*]
+
+'''
+
+[discrete]
+== Q.1_b)
+
+.Diagrama da questão
+image::l5q1b.svg[]
+
+Expressão: stem:[(((ab^*(a\cup b))\cup \epsilon)a)^*((ab^*(a\cup b))\cup \epsilon)]
+
+Talvez desse para simplificar algum stem:[\epsilon] de forma significante. Dá para simplificar na concatenação por a nesse primeiro termozão mas não ajuda muito.
+
+'''
