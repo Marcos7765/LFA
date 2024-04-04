@@ -1,0 +1,444 @@
+= Lista 8
+Aluno: Marcos Vinícius Bandeira Irigoyen
+:stem: latexmath
+:stylesheet: C:\Users\mvbir\Downloads\boot-slate.css
+
+Imagens e o markup pra lista no https://github.com/Marcos7765/LFA[repositório].
+
+
+Adotando stem:[C] como letra para as gramáticas na FNC.
+
+P.S.: Faltou muito um align.
+
+[discrete]
+== Q.1_
+
+[stem]
+++++
+G = (\{S\},\ \{a\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow a\\
+\end{cases}\\
+C = G
+++++
+
+'''
+
+[discrete]
+== Q.2_
+
+[stem]
+++++
+G = (\{S\},\ \{\epsilon\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow \epsilon\\
+\end{cases}\\
+C = G
+++++
+
+'''
+
+[discrete]
+== Q.3_
+
+[stem]
+++++
+G = (\{S\},\ \{a\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow a \mid b \\
+\end{cases}\\
+C = G
+++++
+
+'''
+
+[discrete]
+== Q.4_
+
+[stem]
+++++
+G = (\{S\},\ \{a,\ \epsilon\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aS \mid \epsilon\\
+\end{cases}\\
+R_2 : \begin{cases}
+S \rightarrow AA \mid a \mid \epsilon\\
+A \rightarrow AA \mid a\\
+\end{cases}\\
+C = (\{S,\ A\},\ \{a,\ \epsilon\},\ R_2,\ S) \\
+++++
+
+'''
+
+[discrete]
+== Q.5_
+
+[stem]
+++++
+G = (\{S\},\ \{a,\ \epsilon\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aS \mid a\\
+\end{cases}\\
+R_2 : \begin{cases}
+S \rightarrow AA \mid a\\
+A \rightarrow AA \mid a\\
+\end{cases}\\
+C = (\{S,\ A\},\ \{a,\ \epsilon\},\ R_2,\ S) \\
+++++
+
+'''
+
+<<<
+
+[discrete]
+== Q.6_
+Algoritmicamente acho mais jogo só criar outra variável para o bS, mas a preguiça venceu.
+
+[stem]
+++++
+G = (\{S\},\ \{a,\ b,\ \epsilon\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aS \mid bS \mid \epsilon\\
+\end{cases}\\
+R_2 : \begin{cases}
+S \rightarrow AA \mid a \mid b \mid \epsilon\\
+A \rightarrow AA \mid a \mid b\\
+\end{cases}\\
+C = (\{S,\ A\},\ \{a,\ \epsilon\},\ R_2,\ S) \\
+++++
+
+'''
+
+[discrete]
+== Q.7_
+
+[stem]
+++++
+G = (\{S\},\ \{a,\ b\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aS \mid bS \mid a \mid b\\
+\end{cases}\\
+R_2 : \begin{cases}
+S \rightarrow AA \mid a \mid b\\
+A \rightarrow AA \mid a \mid b\\
+\end{cases}\\
+C = (\{S,\ A\},\ \{a,\ \epsilon\},\ R_2,\ S) \\
+++++
+
+'''
+
+
+[discrete]
+== Q.8_
+
+[stem]
+++++
+G = (\{S,\ M\},\ \{a,\ b\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aMa \mid a\\
+M \rightarrow aM \mid bM \mid \epsilon
+\end{cases}\\
+R_2 : \begin{cases}
+S \rightarrow aMa \mid a \mid aa\\
+M \rightarrow aM \mid bM \mid a \mid b
+\end{cases}\\
+R_3 : \begin{cases}
+S \rightarrow AD \mid a \mid AA\\
+M \rightarrow AM \mid BM \mid a \mid b \\
+A \rightarrow a\\
+B \rightarrow b\\
+D \rightarrow MA\\
+\end{cases}\\
+C = (\{S,\ M,\ A,\ B,\ D\},\ \{a,\ b\},\ R_3,\ S) \\
+++++
+
+'''
+
+<<<
+
+[discrete]
+== Q.9_
+
+[stem]
+++++
+G = (\{S,\ M\},\ \{a,\ b\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aMa \mid bMb\mid a \mid b\\
+M \rightarrow aM \mid bM \mid \epsilon
+\end{cases}\\
+R_2 : \begin{cases}
+S \rightarrow aMa \mid bMb \mid a \mid b \mid aa \mid bb\\
+M \rightarrow aM \mid bM \mid a \mid b
+\end{cases}\\
+R_3 : \begin{cases}
+S \rightarrow AD \mid BF \mid a \mid b \mid AA \mid BB\\
+M \rightarrow AM \mid BM \mid a \mid b\\
+A \rightarrow a\\
+B \rightarrow b\\
+D \rightarrow MA\\
+F \rightarrow MB\\
+\end{cases}\\
+C = (\{S,\ M,\ A,\ B,\ D,\ F\},\ \{a,\ b\},\ R_3,\ S) \\
+++++
+
+'''
+
+[discrete]
+== Q.10_
+
+[stem]
+++++
+G = (\{S\},\ \{a,\ b\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aSb \mid \epsilon\\
+\end{cases}\\
+R_2: \begin{cases}
+S \rightarrow aTb \mid ab \mid \epsilon \\
+T \rightarrow aTb \mid ab
+\end{cases}\\
+R_3: \begin{cases}
+S \rightarrow AC \mid AB \mid \epsilon \\
+T \rightarrow AC \mid AB \\
+A \rightarrow a\\
+B \rightarrow b\\
+C \rightarrow TB\\
+\end{cases}\\
+C = (\{S,\ T,\ A,\ B,\ C\},\ \{a,\ b\},\ R_3,\ S) \\
+++++
+
+'''
+
+<<<
+
+[discrete]
+== Q.11_
+
+[stem]
+++++
+G = (\{S,\ A,\ B\},\ \{a,\ b,\ c,\ d\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow AB\\
+A \rightarrow aAb \mid \epsilon\\
+B \rightarrow cBd \mid \epsilon\\
+\end{cases}\\
+R_2: \begin{cases}
+S \rightarrow AB \mid A \mid B \mid \epsilon\\
+A \rightarrow aAb \mid ab\\
+B \rightarrow cBd \mid cd\\
+\end{cases}\\
+R_3: \begin{cases}
+S \rightarrow AB \mid aAb \mid ab \mid cBd \mid cd \mid \epsilon\\
+A \rightarrow aAb \mid ab\\
+B \rightarrow cBd \mid cd\\
+\end{cases}\\
+R_4: \begin{cases}
+S \rightarrow AB \mid V_aD \mid V_aV_b \mid V_cE \mid V_cV_d \mid \epsilon\\
+A \rightarrow V_aD \mid V_aV_b\\
+B \rightarrow V_cE \mid V_cV_d\\
+D \rightarrow AV_b\\
+E \rightarrow BV_d\\
+V_a \rightarrow a\\
+V_b \rightarrow b\\
+V_c \rightarrow c\\
+V_d \rightarrow d\\
+\end{cases}\\
+C = (\{S,\ A,\ B,\ D,\ E,\ V_a,\ V_b,\ V_c,\ V_d\},\ \{a,\ b,\ c,\ d\},\ R_4,\ S) \\
+++++
+
+'''
+
+<<<
+
+[discrete]
+== Q.12_
+glc refeita por 16 motivos interessantes
+[stem]
+++++
+G = (\{S, A,\ T\},\ \{0,\ 1\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow AAAT\\
+A \rightarrow T1\\
+T \rightarrow 0T \mid 1T \mid \epsilon
+\end{cases}\\
+R_2: \begin{cases}
+S \rightarrow AAAT \mid AAA\\
+A \rightarrow T1 \mid 1\\
+T \rightarrow 0T \mid 1T \mid 0 \mid 1
+\end{cases}\\
+R_3: \begin{cases}
+S \rightarrow BD \mid BA\\
+A \rightarrow TV_1 \mid 1\\
+T \rightarrow V_0T \mid V_1T \mid 0 \mid 1\\
+B \rightarrow AA\\
+D \rightarrow AT\\
+V_0 \rightarrow 0\\
+V_1 \rightarrow 1\\
+\end{cases}\\
+C = (\{S, A,\ T,\ B,\ D,\ V_0,\ V_1\},\ \{0,\ 1\},\ R_3,\ S) \\
+++++
+
+alguns dos motivos:
+[stem]
+++++
+G = (\{S, T\},\ \{0,\ 1\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow T1T1T1T\\
+T \rightarrow 0T \mid 1T \mid \epsilon
+\end{cases}\\
+R_2: \begin{cases}
+S \rightarrow T1T1T1T \mid 1T1T1T \mid T11T1T \mid T1T11T \mid T1T1T1 \mid T1T1T1T \mid\\
+T \rightarrow 0T \mid 1T \mid 0 \mid 1
+\end{cases}\\
+++++
+
+'''
+
+[discrete]
+== Q.13_
+Não percebo a diferença dela para a 9 (de forma que não ficasse igual a 3). Leia a questão 9 ou 3.
+
+acabou só esculhambando a ordem
+
+'''
+
+[discrete]
+== Q.14_
+
+[stem]
+++++
+G = (\{S,\ P\},\ \{a\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aP\\
+P \rightarrow aaP \mid \epsilon\\
+\end{cases}\\
+R_2: \begin{cases}
+S \rightarrow aP \mid a\\
+P \rightarrow aaP \mid aa\\
+\end{cases}\\
+R_3: \begin{cases}
+S \rightarrow V_aP \mid a\\
+P \rightarrow AP \mid A\\
+A \rightarrow V_aV_a\\
+V_a \rightarrow a
+\end{cases}\\
+C = (\{S,\ P,\ A,\ V_a\},\ \{a\},\ R_3,\ S) \\
+++++
+
+'''
+
+[discrete]
+== Q.15_
+
+[stem]
+++++
+G = (\{S,\ P,\ T\},\ \{0,\ 1\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow P1P\\
+P \rightarrow TTP \mid \epsilon\\
+T \rightarrow 0\mid1
+\end{cases}\\
+R_2: \begin{cases}
+S \rightarrow P1P \mid 1P \mid P1 \mid 1\\
+P \rightarrow TTP \mid TT\\
+T \rightarrow 0\mid1
+\end{cases}\\
+R_3: \begin{cases}
+S \rightarrow AP \mid V_1P \mid PV_1 \mid 1\\
+P \rightarrow BP \mid TT\\
+T \rightarrow 0\mid1\\
+A \rightarrow PV_1\\
+B \rightarrow TT\\
+V_1 \rightarrow 1
+\end{cases}\\
+C = (\{S,\ P,\ T,\ A,\ B,\ V_1\},\ \{0,\ 1\},\ R_3,\ S) \\
+++++
+
+'''
+
+[discrete]
+== Q.16_
+
+[stem]
+++++
+G = (\{S\},\ \{a,\ b\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aSa \mid bSb \mid b \mid a\mid \epsilon\\
+\end{cases}\\
+R_2: \begin{cases}
+S \rightarrow aPa \mid bPb \mid b \mid a\mid \epsilon\\
+P \rightarrow aPa \mid bPb \mid b \mid a\mid \epsilon
+\end{cases}\\
+R_3: \begin{cases}
+S \rightarrow aPa \mid bPb \mid b \mid a\mid aa \mid bb \mid \epsilon\\
+P \rightarrow aPa \mid bPb \mid b \mid a\mid aa \mid bb\\
+\end{cases}\\
+R_3: \begin{cases}
+S \rightarrow AV_a \mid BV_b \mid b \mid a\mid V_aV_a \mid V_bV_b \mid \epsilon\\
+P \rightarrow AV_a \mid BV_b \mid b \mid a\mid V_aV_a \mid V_bV_b\\
+A \rightarrow V_aP\\
+B \rightarrow V_bP\\
+V_a \rightarrow a\\
+V_b \rightarrow b
+\end{cases}\\
+G = (\{S,\ P,\ A,\ B,\ V_a,\ V_b\},\ \{a,\ b\},\ R_3,\ S) \\
+++++
+
+'''
+
+<<<
+
+[discrete]
+== Q.17_
+
+[stem]
+++++
+G = (\{S,\ T\},\ \{0,\ 1\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow T001\\
+T \rightarrow 0T\mid 1T\mid \epsilon\\
+\end{cases}\\
+R_2: \begin{cases}
+S \rightarrow T001 \mid 001 \\
+T \rightarrow 0T\mid 1T\mid 0\mid 1\\
+\end{cases}\\
+R_3: \begin{cases}
+S \rightarrow TA \mid A \\
+A \rightarrow BV_1 \\
+B \rightarrow V_0V_0 \\
+T \rightarrow V_0T\mid V_1T\mid 0\mid 1\\
+V_0 \rightarrow 0 \\
+V_1 \rightarrow 1 \\
+\end{cases}\\
+G = (\{S,\ T,\ A,\ B,\ V_0,\ V_1\},\ \{0,\ 1\},\ R_3,\ S) \\
+++++
+
+'''
+
+[discrete]
+== Q.18_
+
+[stem]
+++++
+G = (\{S\},\ \{0,\ 1\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow 0S \mid 10S \mid \epsilon\\
+\end{cases}\\
+R_2: \begin{cases}
+S \rightarrow 0T \mid 10T \mid \epsilon\\
+T \rightarrow 0T \mid 10T \mid \epsilon
+\end{cases}\\
+R_3: \begin{cases}
+S \rightarrow 0T \mid 10T \mid 0 \mid 10 \mid \epsilon\\
+T \rightarrow 0T \mid 10T \mid 0 \mid 10
+\end{cases}\\
+R_4: \begin{cases}
+S \rightarrow V_0T \mid AT \mid 0 \mid V_1V_0 \mid \epsilon\\
+T \rightarrow V_0T \mid AT \mid 0 \mid V_1V_0\\
+A \rightarrow V_1V_0\\
+V_0 \rightarrow 0\\
+V_1 \rightarrow 1\\
+\end{cases}\\
+C = (\{S,\ T,\ A,\ V_0,\ V_1\},\ \{0,\ 1\},\ R_4,\ S) \\
+++++
+
+'''
