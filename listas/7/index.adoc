@@ -1,0 +1,242 @@
+= Lista 7
+Aluno: Marcos Vinícius Bandeira Irigoyen
+:stem: latexmath
+:stylesheet: C:\Users\mvbir\Downloads\boot-slate.css
+
+Imagens e o markup pra lista no https://github.com/Marcos7765/LFA[repositório].
+
+[discrete]
+== Q.1_
+
+[stem]
+++++
+G = (\{S\},\ \{a\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow a\\
+\end{cases}
+++++
+
+'''
+
+[discrete]
+== Q.2_
+
+[stem]
+++++
+G = (\{S\},\ \{\epsilon\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow \epsilon\\
+\end{cases}
+++++
+
+'''
+
+[discrete]
+== Q.3_
+
+[stem]
+++++
+G = (\{S\},\ \{a\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow a \mid b \\
+\end{cases}
+++++
+
+'''
+
+[discrete]
+== Q.4_
+
+[stem]
+++++
+G = (\{S\},\ \{a,\ \epsilon\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aS \mid \epsilon\\
+\end{cases}
+++++
+
+'''
+
+[discrete]
+== Q.5_
+
+[stem]
+++++
+G = (\{S\},\ \{a,\ \epsilon\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aS \mid a\\
+\end{cases}
+++++
+
+'''
+
+[discrete]
+== Q.6_
+
+[stem]
+++++
+G = (\{S\},\ \{a,\ b,\ \epsilon\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aS \mid bS \mid \epsilon\\
+\end{cases}
+++++
+
+'''
+
+[discrete]
+== Q.7_
+
+[stem]
+++++
+G = (\{S\},\ \{a,\ b\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aS \mid bS \mid a \mid b\\
+\end{cases}
+++++
+
+'''
+
+<<<
+
+[discrete]
+== Q.8_
+
+[stem]
+++++
+G = (\{S,\ M\},\ \{a,\ b\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aMa \mid a\\
+M \rightarrow aM \mid bM \mid \epsilon
+\end{cases}
+++++
+
+'''
+
+[discrete]
+== Q.9_
+
+[stem]
+++++
+G = (\{S,\ M\},\ \{a,\ b\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aMa \mid bMb\mid a \mid b\\
+M \rightarrow aM \mid bM \mid \epsilon
+\end{cases}
+++++
+
+'''
+
+[discrete]
+== Q.10_
+
+[stem]
+++++
+G = (\{S\},\ \{a,\ b\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aSb \mid \epsilon\\
+\end{cases}
+++++
+
+'''
+
+[discrete]
+== Q.11_
+
+[stem]
+++++
+G = (\{S,\ A,\ B\},\ \{a,\ b,\ c,\ d\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow AB\\
+A \rightarrow aAb \mid \epsilon\\
+B \rightarrow cBd \mid \epsilon\\
+\end{cases}
+++++
+
+'''
+
+[discrete]
+== Q.12_
+
+[stem]
+++++
+G = (\{S, T\},\ \{0,\ 1\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow T1T1T1T\\
+T \rightarrow 0T \mid 1T \mid \epsilon
+\end{cases}
+++++
+
+'''
+
+[discrete]
+== Q.13_
+
+[stem]
+++++
+G = (\{S,\ P\},\ \{a\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aP\\
+P \rightarrow aaP \mid \epsilon\\
+\end{cases}
+++++
+
+'''
+
+[discrete]
+== Q.14_
+
+[stem]
+++++
+G = (\{S,\ P,\ T\},\ \{0,\ 1\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow P1P\\
+P \rightarrow TTP \mid \epsilon\\
+T \rightarrow 0\mid1
+\end{cases}
+++++
+
+'''
+
+<<<
+
+[discrete]
+== Q.15_
+
+[stem]
+++++
+G = (\{S\},\ \{a,\ b\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow aSa \mid bSb \mid b \mid a\mid \epsilon\\
+\end{cases}
+++++
+
+'''
+
+[discrete]
+== Q.16_
+
+[stem]
+++++
+G = (\{S,\ T\},\ \{0,\ 1\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow T001\\
+T \rightarrow 0T\mid 1T\mid \epsilon\\
+\end{cases}
+++++
+
+'''
+
+[discrete]
+== Q.17_
+
+[stem]
+++++
+G = (\{S\},\ \{0,\ 1\},\ R,\ S) \\
+R: \begin{cases}
+S \rightarrow 0S \mid 10S \mid \epsilon\\
+\end{cases}
+++++
+
+'''
+
+image:lista6.png[width=480, height=600]
